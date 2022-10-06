@@ -70,3 +70,24 @@ let hogwarts = [
     occupation: "Teacher",
   },
 ];
+
+function gryffindorPeople(gryfWizards){
+
+  let gryffindors = gryfWizards.filter(el => el.house === "Gryffindor")
+  gryffindors.forEach(el => {
+     let {firstName, lastName} = el;
+     console.log(`${firstName} ${lastName}`)
+  });  
+}
+
+function teachersWithPets(hogwarts) {
+
+  let teachersWithPets = hogwarts.filter(el => el.occupation === "Teacher").filter(el => el.pet !== null)
+  teachersWithPets.forEach(el => {
+    let {firstName, lastName} = el
+    console.log(`${firstName} ${lastName}`)
+  })
+}
+
+gryffindorPeople(hogwarts)
+teachersWithPets(hogwarts) 
